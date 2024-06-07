@@ -1,0 +1,6 @@
+@ImageGallery.Client_HostAddress = http://localhost:5261
+
+GET {{ImageGallery.Client_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
