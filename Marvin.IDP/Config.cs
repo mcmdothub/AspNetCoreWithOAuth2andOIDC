@@ -7,7 +7,12 @@ public static class Config
     public static IEnumerable<IdentityResource> IdentityResources =>
         new IdentityResource[]
         { 
-            new IdentityResources.OpenId()
+            // required scope for OIDC
+            // unables claims: sub (user identifier)
+            new IdentityResources.OpenId(), 
+            // Add scope for profile
+            // unables claims: name, family_name, given_name ... birthdate, zoneinfo, locale, updated_at
+            new IdentityResources.Profile()
         };
 
     public static IEnumerable<ApiScope> ApiScopes =>
